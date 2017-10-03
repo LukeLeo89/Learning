@@ -1,0 +1,36 @@
+GitHub
+
+			(Add)							(Commit)							(push/pull)
+WorkArea	--------->		Staging Area	--------->		Local repository	<--------->	remote repository
+
+
+Commands
+
+$touch <file name>	---------> to create files in the directory
+
+$git init	---------> initialize the local repository (to initialize a folder as a repository)
+$git add <file>		--------->	Add files to the staging area (Index)
+$git add .		--------->	Add all the files to the staging area
+
+$git status		--------->	To check  the files in the staging area that are ready for commit (status of working area) and those which are not added to the staging area
+$git commit		--------->	Takes the files from the staging area (Index) and place it in the local repository
+$git commit -m 'Log text'	--------->	to commit a file without inital commit window
+
+
+$git push	--------->	takes local repository and push it to remote repository, you need to add the service for authentication
+$git pull	--------->	pulls the latest version from remote repository
+$git clone	--------->	copy remote repository into current folder
+
+
+Branches
+
+To create branches so that any developer can make changes without affecting the main repository
+
+Command
+$git branch <branch name>	--------->	to create a branch
+$git checkout <branch name>	--------->	to switch to a particular branch
+$git merge <branch name>	--------->	to merge the branches with the master branch
+
+
+
+

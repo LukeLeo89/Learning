@@ -1,0 +1,56 @@
+Classes: 
+
+1. Specification/Blueprint of how objects should behave.
+2. Contains instructions for how objects can be created and objects carry out behaviour
+
+
+
+
+this
+Variable in java
+Points to  current objects
+
+
+Inheritance
+One class inherits behaviour of another class
+keyword 'extends'
+The child class gets a copy of the parent class when we inherit the parent class
+
+
+
+
+
+
+Abstract Classes
+
+Classes with abstract methods and it cannot be instantiated
+
+Interface
+Contract
+Any class which implements the interface class should and must implement those methods
+Method that do not have body (abstract method)
+
+
+
+
+Method Overriding
+Replacing the method that we are inheriting
+
+
+Polymorphism
+
+ability for methods of a class to behave differently
+
+
+
+
+
+
+
+
+drag and drop website
+https://dhtmlx.com/docs/products/dhtmlxTree/
+
+
+Double Click website
+http://api.jquery.com/dblclick/
