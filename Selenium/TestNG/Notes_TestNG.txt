@@ -4,3 +4,80 @@ Annotations
 
 
 Test cases and executed in the alphabetical order
+
+
+to set the priority below is the command
+
+@Test(priority=1)
+
+
+
+
+@BeforeTest		---->	will be executed before test case
+Example: Opening browser before executing the test case
+
+
+@AfterTest		---->	will be executed after test case
+Example: Closing the browser
+
+
+@BeforeMethod (more prefered)	----->	executes before every test case
+Example: Start session
+
+
+@AfterMethod(more prefered)	----->	executes after every test case
+Example: End session
+
+
+
+Suite	---->	contains multiple test cases
+
+@BeforeSuite	---->	execute once before the suite
+@AfterSuite		---->	execute once after the suite
+
+
+
+To skip the test case
+
+throw new SkipException("<Any reason>")
+
+
+
+
+@Test(priority=2, depeneds = {"Any reason"})
+skipping test cases
+
+
+
+
+
+Assert class is used to log the results
+
+Syntax: Assert.assertEquals(actual, expected);		---->	comparing the values (test is stopped when an error occurs)
+		Assert.assetTrue(2>1, "Error message");		---->	Failing/Passing the test
+		Example: Assert.assetTrue(IsElementPresent(By.id('123')), "Element not found");		---->	check whether element is present in the webpage
+		
+		
+		Assert.fail("Error message");	---->	To fail the test case
+		
+		
+		
+SoftAssert class is used to report all the errors after all the test cases are completed. It will not stop the test execution
+To use SoftAssert
+
+SoftAssert sa = new SoftAssert();
+sa.assertEquals(actual, expected);		---->	This will collect all the errors and keep it but will not display the error
+sa.assertAll();		---->	displays the error after completion of all the test cases	*****[Mandatory]*****
+
+
+
+
+Parameterise
+Executing one test with multiple sets of data
+
+Object class
+
+To use this we need to provide 
+
+@DataProvider
+
