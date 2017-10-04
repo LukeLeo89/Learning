@@ -82,10 +82,10 @@ To use this we need to provide
 
 
 @DataProvider
-returns a 2 dimensional object array
+* returns a 2 dimensional object array
 
-Rows -> number of times the test case is run
-Columns	->	parameters used to run the test case
+* Rows -> number of times the test case is run
+  Columns	->	parameters used to run the test case
 
 Example:
 
@@ -93,21 +93,19 @@ Run1	->	User1	Password1	Mozilla		Phone1
 Run2	->	User2	Password2	Chrome		Phone2
 
 
-Object class	---->	Super class of all the classes in Java
-Object Array	---->	Can hold data of different data types
+* Object class	---->	Super class of all the classes in Java
+* Object Array	---->	Can hold data of different data types
 
-
-
-
-
+@DataProvider
 public Object[][] getData(){
-	Object[][] data = new Object[3][4];
+	Object[][] data = new Object[3][5];
 	
 	//1st row
 	data[0][0] = "U1";
 	data[0][1] = "P1";
 	data[0][2] = "Pass";
 	data[0][3] = "Mozilla";
+	data[0][4] = 1214544;
 	
 	
 	//2st row
@@ -115,6 +113,7 @@ public Object[][] getData(){
 	data[1][1] = "P2";
 	data[1][2] = "Pass";
 	data[1][3] = "Chrome";
+	data[1][4] = 5634564;
 	
 	
 	//3rd row
@@ -122,6 +121,7 @@ public Object[][] getData(){
 	data[2][1] = "P3";
 	data[2][2] = "Fail";
 	data[2][3] = "IE";
+	data[2][4] = 3453643;
 	
 	
 	return data;
@@ -129,4 +129,35 @@ public Object[][] getData(){
 }
 
 
-data provider should be specified in the test case
+* data provider should be specified in the test case
+
+@Test(dataProvider="getData")
+public void loginTest(String username,
+String password,
+String expectedresult,
+String browser,
+int phone){
+}
+
+
+
+* Sequential execution
+	To run all the test in a batch you can use the testng.xml file to specify the tests that you want to include in your batch. And then run that testng.xml file.
+
+
+* Parallel execution
+	To run all the test in a batch you can use the testng.xml file to specify the tests that you want to include in your batch. Add an attribute (parallel="tests") in the testng.xml in suite tag. And then run that testng.xml file.
+	
+	
+	
+Steps to get testng.xml file
+1. Run once your project
+2. Refresh your project
+3. Now, “test-output” folder will get created under your project – unfold the folder
+4. Double click the ‘index.html’ file; it will get open in the Eclipse Browser window
+5. Click on the ‘.xml’ link given on the left panel
+6. The test suite XML will get opened on the right-side panel
+7. Take a copy of the XML content
+8. Right click your project >> New >> File
+9. Give name of your test suite file (with.xml extension e.g. testng.xml) and click finish
+10. Paste the content that you copied from the ‘index.html’ and amend your suite file as per your needs	
