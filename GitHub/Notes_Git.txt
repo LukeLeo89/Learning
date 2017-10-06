@@ -32,5 +32,11 @@ $git checkout <branch name>	--------->	to switch to a particular branch
 $git merge <branch name>	--------->	to merge the branches with the master branch
 
 
+Create a file which we don't want to include
+1. Create a file called .gitignore
+2. Add file name in .gitignore file
+
+
+
 
 
