@@ -1,0 +1,17 @@
+<project name="Ant-test" default = "jar">
+	<target name="clean">
+		<delete dir="build/classes" />
+	</target>
+	<target name="init" depends="clean">
+		<mkdir dir="build/classes" />
+	</target>
+	<target name="compile" depends="init">
+		<javac srcdir="FirstProject/src"
+		 destdir="build/classes"
+		/>
+	</target>
+	<target name="jar" depends="compile">
+		<jar destfile="build/jar/app-1.0.jar" basedir="build/classes"/>
+	</target>
+	
+</project>
