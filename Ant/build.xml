@@ -1,19 +1,29 @@
-<project name="Ant-test" default = "jar">
+<project name="Ant-test" default = "dist">
+	<!--<property name="appversion" value="1.1" />-->
+	<property file="build.properties" />
 	<target name="clean">
 		<delete dir="build/classes" />
 		<delete dir="build/jars" />
+		<delete dir="${dist}" />
 	</target>
 	<target name="init" depends="clean">
 		<mkdir dir="build/classes" />
 		<mkdir dir="build/jars" />
+		<mkdir dir="${dist}" />
 	</target>
 	<target name="compile" depends="init">
 		<javac srcdir="FirstProject/src"
 		 destdir="build/classes"
+		 includeantruntime="false"
 		/>
 	</target>
 	<target name="jar" depends="compile">
-		<jar destfile="build/jars/app-1.0.jar" basedir="build/classes"/>
+		<jar destfile="build/jars/app-${appversion}.jar" basedir="build/classes"/>
+	</target>
+	<target name="dist" depends="jar">
+		<zip destfile="${dist}/app-${appversion}.zip"
+		 basedir="build/jars"
+		/>
 	</target>
 	
 </project>
