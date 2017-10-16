@@ -1,0 +1,19 @@
+Maven
+*	helps to maintain right version of jars
+*	helps to execute the framework from command prompt
+*	Generate exe files
+
+
+Ant
+
+*	Build and compile tool
+*	help you to execute only from command prompt
+*	Generate exe files
+
+
+
+Jenkins
+
+*	Schedules the test cases
+
+
